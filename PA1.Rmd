@@ -1,0 +1,22 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# **`r format(Sys.Date(),"%d %b %Y")`**
+
+```{r echo=FALSE, cache=TRUE}
+library(leaflet)
+myicon<- makeIcon(
+  iconUrl = "https://pluspng.com/img-png/png-file-name-health-600.png",
+  iconWidth = 31*215/230, iconHeight = 31,
+  iconAnchorX = 31*215/230/2,iconAnchorY = 16
+)
+site<- "<a href='https://www.who.int/'>WHO Head Quarters</a>"
+my_map<-leaflet()%>%
+  addTiles()
+my_map<-my_map%>%
+  addMarkers(lat=46.2044,lng=6.1432,popup = site,icon = myicon)
+my_map
+```
+
